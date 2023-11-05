@@ -42,7 +42,13 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
-        return false;
+        boolean con = false;
+         for (String arr :array) {
+             if (arr == value){
+                 con = true;
+             }
+         }
+        return con;
     }
 
     /**
@@ -50,7 +56,14 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-        return null;
+        int arrayLength = array.length / 2;
+        for (int i = 0; i < arrayLength; i++){
+            int num = array.length - 1 - i;
+            String temp = array[i];
+            array[i] = array[num];
+            array[num] = temp;
+        }
+        return array;
     }
 
     /**
